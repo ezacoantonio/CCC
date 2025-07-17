@@ -11,7 +11,7 @@ const UpdateForm = () => {
     setMessage("");
     try {
       const res = await axios.get(
-        `http://127.0.0.1:5000/clients/${plateNumber}`
+        `https://ccc-backend-xlsw.onrender.com/clients/${plateNumber}`
       );
       setClient(res.data);
     } catch (err) {
@@ -29,8 +29,10 @@ const UpdateForm = () => {
 
   const handleUpdate = async () => {
     try {
-      await axios.delete(`http://127.0.0.1:5000/clients/${plateNumber}`);
-      await axios.post(`http://127.0.0.1:5000/clients`, client);
+      await axios.delete(
+        `https://ccc-backend-xlsw.onrender.com/clients/${plateNumber}`
+      );
+      await axios.post(`https://ccc-backend-xlsw.onrender.com/clients`, client);
       setMessage("Client updated!");
     } catch (err) {
       setMessage("Update failed");

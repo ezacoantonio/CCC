@@ -9,7 +9,7 @@ const AllReports = () => {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:5000/reports")
+      .get("https://ccc-backend-xlsw.onrender.com/reports")
       .then((res) => setReports(res.data))
       .catch((err) => console.error(err));
   }, []);

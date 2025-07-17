@@ -8,7 +8,9 @@ const DeleteForm = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://127.0.0.1:5000/clients/${plateNumber}`);
+      await axios.delete(
+        `https://ccc-backend-xlsw.onrender.com/clients/${plateNumber}`
+      );
       setMessage("Client deleted successfully!");
     } catch (err) {
       setMessage("Client not found or deletion failed");

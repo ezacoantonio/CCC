@@ -10,7 +10,7 @@ const EditReportForm = () => {
 
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:5000/reports`)
+      .get(`https://ccc-backend-xlsw.onrender.com/reports`)
       .then((res) => {
         const found = res.data.find((r) => r._id === id);
         if (found) setReport(found);
@@ -28,7 +28,10 @@ const EditReportForm = () => {
 
   const handleUpdate = async () => {
     try {
-      await axios.put(`http://127.0.0.1:5000/reports/${id}`, report);
+      await axios.put(
+        `https://ccc-backend-xlsw.onrender.com/reports/${id}`,
+        report
+      );
       setMessage("Report updated successfully!");
     } catch (err) {
       setMessage("Failed to update report");

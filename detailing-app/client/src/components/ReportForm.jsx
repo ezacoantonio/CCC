@@ -32,7 +32,10 @@ const ReportForm = () => {
     e.preventDefault();
     setMessage("");
     try {
-      await axios.post("http://127.0.0.1:5000/reports", formData);
+      await axios.post(
+        "https://ccc-backend-xlsw.onrender.com/reports",
+        formData
+      );
       setMessage("Report submitted successfully!");
       setFormData({
         plateNumber: "",

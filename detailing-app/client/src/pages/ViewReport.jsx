@@ -27,7 +27,7 @@ const ViewReport = () => {
 
   const handleSearch = async () => {
     try {
-      const res = await axios.get(`${BASE_URL}/clients/${plateNumber}`);
+      const res = await axios.get(`${BASE_URL}/reports/${plateNumber}`);
       setReports(res.data);
     } catch (err) {
       console.error("Error fetching reports:", err);
@@ -58,7 +58,7 @@ const ViewReport = () => {
       <br></br>
       <BackButton />
 
-      {reports.length > 0 ? (
+      {Array.isArray(reports) && reports.length > 0 ? (
         reports.map((report, index) => (
           <Card key={index} sx={{ mt: 4 }} elevation={4}>
             <CardContent>

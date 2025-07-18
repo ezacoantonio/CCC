@@ -27,6 +27,7 @@ exports.getClient = async (req, res) => {
     const client = await Client.findOne({
       plateNumber: req.params.plateNumber,
     });
+    console.log("Client found:", client);
     if (!client) return res.status(404).json({ error: "Client not found" });
     res.json(client);
   } catch (err) {

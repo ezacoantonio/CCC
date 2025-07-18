@@ -28,7 +28,7 @@ const ClientForm = () => {
     e.preventDefault();
     setMessage("");
     try {
-      await axios.get(`${BASE_URL}/clients`);
+      await axios.post(`${BASE_URL}/clients`, formData);
       setMessage("Client added successfully!");
       setFormData({
         fullName: "",

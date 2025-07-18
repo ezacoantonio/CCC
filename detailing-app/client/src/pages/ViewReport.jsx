@@ -27,7 +27,7 @@ const ViewReport = () => {
 
   const handleSearch = async () => {
     try {
-      const res = await axios.post(`${BASE_URL}/clients`);
+      const res = await axios.get(`${BASE_URL}/clients`);
       setReports(res.data);
     } catch (err) {
       console.error("Error fetching reports:", err);
